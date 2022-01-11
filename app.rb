@@ -6,14 +6,24 @@ require 'sinatra/reloader'
       register Sinatra::Reloader
   end
 
+  enable :sessions
+
+
   get "/" do
     erb :index
   end
 
   post '/names' do
-    @player_one = params[:player_one]
-    @player_two = params[:player_two]
-    erb :game
+    session[:player_one] = params[:player_one]
+    session[:player_two] = params[:player_two]
+    redirect "/play"
   end 
+
+  get "/play" do
+    erb :play
+
+  end
+
+
 
 end
