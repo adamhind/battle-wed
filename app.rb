@@ -7,7 +7,13 @@ require 'sinatra/reloader'
   end
 
   get "/" do
-    "Testing infrastructure working!"
+    erb :index
   end
 
-  end
+  post '/names' do
+    @player_one = params[:player_one]
+    @player_two = params[:player_two]
+    erb :game
+  end 
+
+end
