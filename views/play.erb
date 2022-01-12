@@ -1,3 +1,7 @@
-<H1> <%= session[:player_one]%> will now play <%= session[:player_two]%> </H1>
+<H1> <%= @player_one.name %> will now play <%= @player_two.name %> </H1>
+<br>
+<H2><%= @player_two.name%>: <%= @player_two.hp%>HP </H2>
 
-<%= session[:player_two]%>: 100HP
+<form action="/attack">
+  <input type="submit" value="attack">
+</form>
