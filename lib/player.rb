@@ -1,11 +1,11 @@
 class Player 
 
-attr_reader :name
-attr_accessor :hp
+attr_reader :name, :hp
+DEFAULT_VALUE = 100
 
-  def initialize(name)  
+  def initialize(name, hp = DEFAULT_VALUE)  
   @name = name 
-  @hp = 100
+  @hp = hp
   end 
 
   def attack(player)
